@@ -1,9 +1,10 @@
 import {createStore, applyMiddleware, compose} from 'redux';
 import {createLogger} from 'redux-logger';
 import createSagaMiddleware, {END} from 'redux-saga';
+import sagaMonitor from '@redux-saga/simple-saga-monitor'
 import DevTools from '~/components/dev/DevTools';
 import rootReducer from '~/modules';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import {connectRouter, routerMiddleware} from 'connected-react-router';
 import {persistStore, persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage/session';
@@ -18,11 +19,11 @@ const persistConfig = {
 };
 
 export function configureStore (initialState) {
-  const history = createHistory ({basename: '/'});
+  const history = createBrowserHistory ({basename: '/'});
   const middleware = routerMiddleware (history);
-  const sagaMiddleware = createSagaMiddleware ();
+  const sagaMiddleware = createSagaMiddleware ({ sagaMonitor });
   const logger = createLogger ();
-  const persistedReducer = persistReducer (persistConfig, rootReducer);
+  const persistedReducer = persistReducer (persistConfig, rootReducer(history));
 
   const store = createStore (
     connectRouter (history) (persistedReducer),

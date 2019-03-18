@@ -10,7 +10,7 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import * as colors from '@material-ui/core/colors';
 import {PersistGate} from 'redux-persist/integration/react';
 
-import rootSaga from '~/controllers/rootSaga.js';
+import rootSaga from '~/controllers/rootSaga';
 import {configureStore} from '~/store/configureStore';
 
 import Layout from '~/containers/Layout';
