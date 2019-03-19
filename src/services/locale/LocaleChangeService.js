@@ -1,5 +1,5 @@
 import { put } from 'redux-saga/effects';
-import {Locale } from '~/models/LocaleModel';
+import { Locale } from '~/models/LocaleModel';
 import * as AppActions from '~/modules/AppState';
 import * as LocaleActions from '~/modules/LocaleState';
 
