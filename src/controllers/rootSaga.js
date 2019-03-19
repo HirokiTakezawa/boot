@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import LocaleController from './LocaleController';
+import LocaleController from './LangController';
 
 function* rootSaga() {
   yield all([...LocaleController]);

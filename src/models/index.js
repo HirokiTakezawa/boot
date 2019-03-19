@@ -1,5 +1,4 @@
-import { App } from './AppModel';
-import { Locale } from './LocaleModel';
+import { Lang } from './LangModel';
 
-const models = [App, Locale];
+const models = [Lang];
 export default models;

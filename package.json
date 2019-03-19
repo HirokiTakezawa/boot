@@ -52,6 +52,7 @@
     "babel-eslint": "^9.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-react-intl-auto": "^1.1.1",
+    "babel-plugin-redux-saga": "^1.0.2",
     "devtools": "0.0.0",
     "eslint": "5.6.0",
     "eslint-config-prettier": "^3.3.0",

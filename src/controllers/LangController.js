@@ -1,7 +1,7 @@
 import { call, takeEvery } from 'redux-saga/effects';
 
-import LocaleChangeService from '~/services/locale/LocaleChangeService';
-import * as Actions from '~/modules/LocaleState';
+import LocaleChangeService from '~/services/lang/LangChangeService';
+import * as Actions from '~/actions/LangAction';
 
 function* changeLocale(action) {
   yield call(LocaleChangeService.run, action);

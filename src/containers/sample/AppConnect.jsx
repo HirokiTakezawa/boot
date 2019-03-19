@@ -1,6 +1,6 @@
 import App from './App';
 import { connect } from 'react-redux';
-import * as localeStateActions from '~/modules/LocaleState';
+import * as localeStateActions from '~/actions/LangAction';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 

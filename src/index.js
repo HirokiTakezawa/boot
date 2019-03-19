@@ -15,7 +15,7 @@ import { configureStore } from '~/store/ConfigureStore';
 
 import Layout from '~/containers/Layout';
 import Routes from '~/containers/Routes';
-import Locales from '~/containers/Locales';
+import LangProvider from '~/containers/Lang/LangProvider';
 
 const muiTheme = createMuiTheme({
   palette: {
@@ -46,11 +46,11 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <MuiThemeProvider theme={muiTheme}>
         <ConnectedRouter history={history}>
-          <Locales locale={'en'}>
+          <LangProvider locale={'en'}>
             <Layout>
               <Routes />
             </Layout>
-          </Locales>
+          </LangProvider>
         </ConnectedRouter>
       </MuiThemeProvider>
     </PersistGate>
