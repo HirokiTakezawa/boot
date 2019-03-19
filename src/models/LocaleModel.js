@@ -1,14 +1,10 @@
-import {Record} from 'immutable';
+import { Record } from 'immutable';
 
-const LocaleRecord = Record (
+const LocaleRecord = Record(
   {
     code: '',
   },
   'Locale'
 );
 
-export class Locale extends LocaleRecord {
-  constructor (obj) {
-    super (obj);
-  }
-}
+export class Locale extends LocaleRecord {}

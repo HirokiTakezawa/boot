@@ -1,17 +1,13 @@
-import {Record} from 'immutable';
+import { Record } from 'immutable';
 
-const AppRecord = Record (
+const AppRecord = Record(
   {
     loading: false,
     errorMessage: '',
     transitionOrder: '',
     openErrorBar: false,
   },
-  App
+  'App'
 );
 
-export class App extends AppRecord {
-  constructor (obj) {
-    super (obj);
-  }
-}
+export class App extends AppRecord {}

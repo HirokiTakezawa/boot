@@ -1,5 +1,5 @@
-import {handleActions} from 'redux-actions';
-import {Locale} from '~/models/LocaleModel';
+import { handleActions } from 'redux-actions';
+import { Locale } from '~/models/LocaleModel';
 
 export const CHANGE_LOCALE = 'CHANGE_LOCALE';
 export const CHANGE_LOCALE_SAVE_STATE = 'CHANGE_LOCALE_SAVE_STATE';
@@ -13,16 +13,16 @@ export const CHANGE_LOCALE_SAVE_STATE = 'CHANGE_LOCALE_SAVE_STATE';
 
 export const changeLocale = code => ({
   type: CHANGE_LOCALE,
-  payload: {locale: code},
+  payload: { locale: code },
 });
 
 const initialState = {
-  locale: new Locale ({
+  locale: new Locale({
     code: 'en',
   }),
 };
 
-const localeState = handleActions (
+const localeState = handleActions(
   {
     [CHANGE_LOCALE_SAVE_STATE]: (state, action) => ({
       ...state,

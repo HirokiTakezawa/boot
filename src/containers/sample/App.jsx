@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {FormattedMessage} from 'react-intl';
+import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import {withStyles} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import logo from './logo.svg';
 import './App.css';
@@ -27,34 +27,31 @@ const styles = theme => ({
 });
 
 class App extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
       locale: this.props.locale,
     };
-    this.handleChange = this.handleChange.bind (this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  componentWillReceiveProps (nextProps) {
-    this.setState (nextProps);
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps);
   }
 
-  handleChange (obj) {
-    this.setState ({locale: obj.target.value});
-    this.props.changeLocale (obj.target.value);
+  handleChange(obj) {
+    this.setState({ locale: obj.target.value });
+    this.props.changeLocale(obj.target.value);
   }
 
-  render () {
-    const {classes} = this.props;
+  render() {
+    const { classes } = this.props;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            <FormattedMessage {...messages.edit} />
-            {' '}
-            <code>src/App.js</code>
-            {' '}
+            <FormattedMessage {...messages.edit} /> <code>src/App.js</code>{' '}
             <FormattedMessage {...messages.save_reload} />
           </p>
           <TextField
@@ -73,12 +70,13 @@ class App extends Component {
             margin="normal"
             variant="outlined"
           >
-            {Object.keys (possibleLocales).map (function (_value) {
+            {Object.keys(possibleLocales).map(function(_value) {
               return (
-                <MenuItem key={_value} value={_value}>{this[_value]}</MenuItem>
+                <MenuItem key={_value} value={_value}>
+                  {this[_value]}
+                </MenuItem>
               );
             }, possibleLocales)}
-
           </TextField>
           <a
             className="App-link"
@@ -94,4 +92,4 @@ class App extends Component {
   }
 }
 
-export default withStyles (styles) (App);
+export default withStyles(styles)(App);
